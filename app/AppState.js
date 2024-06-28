@@ -1,3 +1,4 @@
+import { Quote } from './models/Quote.js'
 import { EventEmitter } from './utils/EventEmitter.js'
 import { createObservableProxy } from './utils/ObservableProxy.js'
 
@@ -8,6 +9,8 @@ class ObservableAppState extends EventEmitter {
   account = null
 
   backgroundImages = []
+
+  quotes = null
 }
 
 export const AppState = createObservableProxy(new ObservableAppState())

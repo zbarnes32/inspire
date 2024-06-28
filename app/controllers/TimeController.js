@@ -3,6 +3,7 @@ import { setHTML } from "../utils/Writer.js"
 export class TimeController {
     constructor() {
         // ✅ console.log('Times are good in the Time Controller 🕰')
+        this.drawTime()
         setInterval(this.drawTime, 1000)
     }
 

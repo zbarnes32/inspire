@@ -26,3 +26,13 @@ body {
 #time {
   font-size: 1.25em;
 }
+
+#quotes {
+  margin-top: 10em;
+  background-color: rgba(155, 155, 155, 0.168);
+}
+
+.quote {
+  color: white;
+  font-size: 2em;
+}
