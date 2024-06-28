@@ -7,7 +7,7 @@ class ImagesService {
         const response = await api.get('api/images')
         // ✅ console.log('Did we get the background image', response.data)
         AppState.backgroundImages = response.data
-        console.log(AppState.backgroundImages)
+        // ✅ console.log(AppState.backgroundImages)
     }
 }
 
