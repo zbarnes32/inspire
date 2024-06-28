@@ -1,4 +1,10 @@
 /* BASIC STYLES HERE */
+
+
+.playwrite-nz {
+  font-family: "Playwrite NZ", cursive;
+}
+
 .profile-picture {
   height: 200px;
   max-width: 100%;
@@ -24,15 +30,30 @@ body {
 }
 
 #time {
-  font-size: 1.25em;
+  font-size: 1em;
 }
 
 #quotes {
-  margin-top: 10em;
-  background-color: rgba(155, 155, 155, 0.168);
+  margin-top: 8em;
 }
 
 .quote {
   color: white;
   font-size: 2em;
+  text-shadow: 3px 1px black;
+}
+
+.author {
+  color: white;
+  font-size: 16px;
+  text-shadow: 2px 1px black;
+  display: none;
+}
+
+.quote:hover {
+  cursor: pointer;
+}
+
+.quote:hover+.author {
+  display: block;
 }
