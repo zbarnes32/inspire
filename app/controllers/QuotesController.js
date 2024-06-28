@@ -21,7 +21,7 @@ export class QuotesController {
 
     drawQuotes() {
         const quotes = AppState.quotes
-        console.log(quotes)
+        // ✅ console.log(quotes)
         let quoteHTML = `${quotes.quoteTemplate}`
         setHTML('quotes', quoteHTML)
 
