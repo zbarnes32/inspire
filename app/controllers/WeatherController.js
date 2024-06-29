@@ -6,6 +6,7 @@ import { setHTML } from "../utils/Writer.js";
 export class WeatherController {
     constructor() {
         // ✅ console.log('Weather Controller, things look great 🌤⛈')
+        AppState.on('weather', this.drawWeather)
         this.getWeather()
     }
 
@@ -21,6 +22,6 @@ export class WeatherController {
     drawWeather(){
         const weather = AppState.weather
         let innerHTMLString = `${weather.weatherTemplate}`
-        setHTML('weather', innerHTMLString)
+        setHTML('weather-button', innerHTMLString)
     }
 }

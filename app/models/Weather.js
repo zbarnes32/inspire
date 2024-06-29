@@ -1,20 +1,25 @@
 export class Weather {
     constructor(data){
         //TODO Drill into the weather object
-        this.weather = data.weather
-        this.icon = data.icon
+        this.weatherDescription = data.weather.main
+        this.icon = data.weather.icon
         //TODO Drill into the main object
-        this.temperature = data.main
+        this.temperature = data.main.temp
     }
 
     get weatherTemplate(){
         return `
-        <button class="fs-3 btn btn-outline-light">
-        <p>78 degrees</p>
-        <i>${this.icon}</i>
-        <p>Sunny</p>
+        <button class="fs-3 btn btn-outline-light text-center">
+        <p class="fs-4">${this.kelvinToCelsius}</p>
+        <img src="${this.icon}" alt="weather icon">
+        <p class="d-block">${this.weatherDescription}</p>
         </button> 
         `
+    }
+
+    get kelvinToCelsius(){
+        const conversion = this.temperature - 273.15
+        return conversion
     }
 }
 
