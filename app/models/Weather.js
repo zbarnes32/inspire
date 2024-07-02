@@ -10,7 +10,15 @@ export class Weather {
     get weatherTemplate(){
         return `
         <button class="fs-3 btn btn-outline-light text-center">
-        <p class="fs-4">${this.kelvinToCelsius}</p>
+        <p class="fs-4">${this.kelvinToFarhenheit}°</p>
+        </button> 
+        `
+    }
+
+    get detailedWeatherTemplate(){
+        return `
+        <button class="fs-3 btn btn-outline-light text-center">
+        <p class="fs-4">${this.kelvinToFarhenheit}°</p>
         <img src="${this.icon}" alt="weather icon">
         <p class="d-block">${this.weatherDescription}</p>
         </button> 
@@ -20,6 +28,12 @@ export class Weather {
     get kelvinToCelsius(){
         const conversion = this.temperature - 273.15
         return conversion
+    }
+
+    get kelvinToFarhenheit(){
+        const conversion = (this.temperature - 273.15) * 1.8 + 32
+        const roundedConversion = Math.round(conversion)
+        return roundedConversion
     }
 }
 
