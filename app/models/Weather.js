@@ -7,18 +7,28 @@ export class Weather {
         this.temperature = data.main.temp
     }
 
+//FIXME Toggling between fahrenheit and celsius
+    toggleTemperature(){
+        console.log('Is the button working?')
+        let fahrenheit = this.kelvinToFahrenheit
+        let celsius = this.kelvinToCelsius
+        let currentTemp = Number(document.getElementById("weather-button"))
+        if (currentTemp == fahrenheit){
+            return celsius
+        } else {
+            return fahrenheit
+        }
+    }
     get weatherTemplate(){
-        return `
-        <button class="fs-3 btn btn-outline-light text-center">
-        <p class="fs-4">${this.kelvinToFarhenheit}°</p>
-        </button> 
-        `
+        
+            return `<p class="fs-4">${this.toggleTemperature()}°C</p>`
     }
 
+    //TODO Stretch Goal: Make the weather button with more details
     get detailedWeatherTemplate(){
         return `
-        <button class="fs-3 btn btn-outline-light text-center">
-        <p class="fs-4">${this.kelvinToFarhenheit}°</p>
+        <button onclick="toggleTemperature()" class="fs-3 btn btn-outline-light text-center">
+        <p class="fs-4">${this.kelvinToCelsius}°</p>
         <img src="${this.icon}" alt="weather icon">
         <p class="d-block">${this.weatherDescription}</p>
         </button> 
@@ -27,14 +37,18 @@ export class Weather {
 
     get kelvinToCelsius(){
         const conversion = this.temperature - 273.15
-        return conversion
+        const roundedConversion = Math.round(conversion)
+        return roundedConversion
     }
 
-    get kelvinToFarhenheit(){
+    get kelvinToFahrenheit(){
         const conversion = (this.temperature - 273.15) * 1.8 + 32
         const roundedConversion = Math.round(conversion)
         return roundedConversion
     }
+
+    
+    
 }
 
 
