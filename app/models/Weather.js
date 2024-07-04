@@ -21,7 +21,7 @@ export class Weather {
     }
     get weatherTemplate(){
         
-            return `<p class="fs-4">${this.toggleTemperature()}°C</p>`
+            return `<p class="fs-4">${this.kelvinToCelsius}°C</p>`
     }
 
     //TODO Stretch Goal: Make the weather button with more details

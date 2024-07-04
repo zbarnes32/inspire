@@ -22,8 +22,8 @@
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
-                    <button class="btn btn-outline-success mdi mdi-plus text-center d-block mb-4">Create To Do</button>
-                    <div class="todo-list d-flex align-items-center gap-3">
+                    <button class="btn btn-outline-success mdi mdi-plus text-center d-block mb-4" onclick="app.ToDoController.drawTodos()">Create To Do</button>
+                    <div class="d-flex align-items-center gap-3" id="todo-list">
                         <!-- Insert Todos here -->
                         <!-- <input type="checkbox" class="checkbox">
                         <input type="text" class="todo-input">
