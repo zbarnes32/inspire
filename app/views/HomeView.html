@@ -2,17 +2,35 @@
     <div class="row justify-content-between widgets">
         <div class="col-3 text-light weather">
             <button onclick="app.Weather.toggleTemperature()" class="fs-3 btn btn-outline-light text-center">
-            <div id="weather-button">
-                <!-- Insert weather data here -->
-            </div>
-            </button> 
-            
+                <div id="weather-button">
+                    <!-- Insert weather data here -->
+                </div>
+            </button>
+
         </div>
         <div class="col-3 text-center text-light fs-1">
-            <p id="time"></p> 
+            <p id="time"></p>
         </div>
+
         <div class="col-3 fs-3">
-            <p class="text-end text-light">To-Do's</p> 
+            <button class="fs-4 btn btn-outline-light text-end" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                aria-controls="offcanvasRight">To Do's: 0</button>
+            <div class="offcanvas offcanvas-end todos" tabindex="-1" id="offcanvasRight"
+                aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header text-center fs-4 todo-title">
+                    <h5 class="offcanvas-title text-center" id="offcanvasRightLabel">To Do's Remaining: 0</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <button class="btn btn-outline-success mdi mdi-plus text-center d-block mb-4">Create To Do</button>
+                    <div class="todo-list d-flex align-items-center gap-3">
+                        <!-- Insert Todos here -->
+                        <!-- <input type="checkbox" class="checkbox">
+                        <input type="text" class="todo-input">
+                        <button class=" btn btn-outline-danger mdi mdi-delete"></button> -->
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -29,4 +47,3 @@
         </div>
     </div>
 </section>
-

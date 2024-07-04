@@ -1,4 +1,13 @@
 /* BASIC STYLES HERE */
+body {
+  background-position: center;
+  background-size: cover;
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid white;
+}
 
 
 .playwrite-nz {
@@ -24,10 +33,6 @@
   border-radius: 25px;
 }
 
-body {
-  background-position: center;
-  background-size: cover;
-}
 
 #time {
   font-size: 1em;
@@ -56,4 +61,32 @@ body {
 
 .quote:hover+.author {
   display: block;
+}
+
+.todos {
+  background-color: rgba(63, 62, 62, 0.8);
+  backdrop-filter: blur(5px);
+  border-radius: 25px;
+  color: white;
+  height: 20em;
+}
+
+.todo-title {
+  border-bottom: 1px solid white;
+}
+
+.checkbox {
+  margin-top: .5em;
+  height: 25px;
+  width: 25px;
+}
+
+.todo-input {
+  background-color: rgba(63, 62, 62, 0.8);
+  color: white;
+  height: 35px;
+  width: 275px;
+  font-size: 16px;
+  gap: .5em;
+
 }
