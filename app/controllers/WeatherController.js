@@ -7,6 +7,7 @@ export class WeatherController {
     constructor() {
         // ✅ console.log('Weather Controller, things look great 🌤⛈')
         AppState.on('weather', this.drawWeather)
+        
         this.getWeather()
     }
 
@@ -21,7 +22,12 @@ export class WeatherController {
 
     drawWeather(){
         const weather = AppState.weather
-        let innerHTMLString = `${weather.weatherTemplate}`
+        let innerHTMLString = `${weather.detailedWeatherTemplate}`
         setHTML('weather-button', innerHTMLString)
+    }
+
+    toggleTemperature(){
+        AppState.weather.toggleTemperature()
+        this.drawWeather()
     }
 }
