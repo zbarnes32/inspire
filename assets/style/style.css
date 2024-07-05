@@ -90,3 +90,12 @@ input {
   gap: .5em;
 
 }
+
+.todo-details {
+  background-color: rgba(63, 62, 62, 0.8);
+  color: white;
+  height: 35px;
+  width: 275px;
+  font-size: 16px;
+  gap: .5em;
+}

@@ -3,14 +3,16 @@ export class Todo {
         this.completed = data.completed || false
         this.description = data.description
         this.creatorId = data.creatorId
+        this.id = data.id
     }
 
     get todoTemplate(){
         return  `
-        <input type="checkbox" class="checkbox">
-        <input type="text" placeholder="Add To Do Here...">
-        <button class=" btn btn-outline-danger mdi mdi-delete"></button>
-
+        <div class="d-flex justify-content-between">
+        <input onclick="app.ToDoController.updateTodo('${this.id}')" type="checkbox" class="checkbox" ${this.completed ? 'checked' : ''}>
+        <p>${this.description}</p>
+        <button onclick="app.ToDoController.deleteTodo('${this.id}')" class="btn btn-outline-danger mdi mdi-delete"></button>
+        </div>
         `
     }
 }
