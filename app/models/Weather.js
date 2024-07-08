@@ -10,16 +10,16 @@ export class Weather {
     }
     get weatherTemplate() {
         if (this.isFahrenheit) {
-            return `<p class="fs-4">${this.kelvinToFahrenheit}°F</p>`
+            return `<p class="mb-0">${this.kelvinToFahrenheit}°F</p>`
         } else {
-            return `<p class="fs-4">${this.kelvinToCelsius}°C</p>`
+            return `<p class="mb-0">${this.kelvinToCelsius}°C</p>`
         }
     }
     get detailedWeatherTemplate() {
         return `
-        ${this.weatherTemplate}
-        <img src="${this.icon}" alt="weather icon">
-        <p class="d-block">${this.weatherDescription}</p>
+        <span class="degree-size">${this.weatherTemplate}</span>
+        <img class="fs-6" src="${this.icon}" alt="weather icon">
+        <p class="d-block mb-0 fs-5">${this.weatherDescription}</p>
         `
     }
 

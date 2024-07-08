@@ -1,38 +1,44 @@
 <section class="container">
-    <div class="row justify-content-between widgets">
-        <div class="col-3 text-light weather">
-            <button onclick="app.WeatherController.toggleTemperature()" class="fs-3 btn btn-outline-light text-center">
+    <div class="row">
+        <div class="col-6 text-light weather">
+            <button onclick="app.WeatherController.toggleTemperature()" class="fs-3 btn btn-outline-light text-center weather-widget">
                 <div id="weather-button">
                     <!-- Insert weather data here -->
                 </div>
             </button>
-
         </div>
-        <div class="col-3 text-center text-light fs-1">
-            <p id="time"></p>
-        </div>
-
-        <div class="col-3 fs-3">
-            <button class="fs-4 btn btn-outline-light text-end" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                aria-controls="offcanvasRight">To Do's</button>
+        
+        <div class="col-6 fs-3">
+            <button class="fs-4 btn btn-outline-light text-center todo-widget" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+            aria-controls="offcanvasRight">To Do's
+            <h6 class="offcanvas-title text-center mt-4" id="offcanvasRightLabel">Remaining: <span id="remaining-todos-count">0</span></h6>
+            </button>
             <div class="offcanvas offcanvas-end todos" tabindex="-1" id="offcanvasRight"
-                aria-labelledby="offcanvasRightLabel">
-                <div class="offcanvas-header text-center fs-4 todo-title">
-                    <h5 class="offcanvas-title text-center" id="offcanvasRightLabel">To Do's Remaining: <span id="remaining-todos-count">0</span></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <input id="todo-details" class="todo-details" type="text" placeholder="Add To-Do Here...">
-                    <button onclick="app.ToDoController.saveTodos()" class="btn btn-outline-success mdi mdi-plus text-center mb-4">Save To Do</button>
-                    <!-- <button class="btn btn-success mdi mdi-check"></button> -->
-                    <div class="d-block" id="todo-list">
-                        <!-- Insert Todos here -->
-                        <!-- <input type="checkbox" class="checkbox">
+            aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header text-center fs-4 todo-title">
+                <h5 class="offcanvas-title text-center" id="offcanvasRightLabel">To Do's Remaining: <span id="remaining-todos-count">0</span></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <input id="todo-details" class="todo-details mb-3" type="text" placeholder="Add To-Do Here...">
+                <button onclick="app.ToDoController.saveTodos()" class="btn btn-success mdi mdi-plus text-center mb-4 mt-4">Save</button>
+                <!-- <button class="btn btn-success mdi mdi-check"></button> -->
+                <div class="d-block" id="todo-list">
+                    <!-- Insert Todos here -->
+                    <!-- <input type="checkbox" class="checkbox">
                         <input type="text" class="todo-input">
                         <button class=" btn btn-outline-danger mdi mdi-delete"></button> -->
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<section class="container">
+    <div class="row">
+        <div class="col-12 text-center text-light fs-1">
+            <p id="time"></p>
         </div>
     </div>
 </section>
